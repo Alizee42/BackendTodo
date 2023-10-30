@@ -31,6 +31,7 @@ class UtilisateurController extends AbstractController
         $firstname = $data['firstname'];
         $lastname = $data['lastname'];
         $email = $data['email'];
+        $role =  $data['role'];
                
         if (empty($username)) {
             throw new NotFoundHttpException('Bad request');
@@ -57,7 +58,8 @@ class UtilisateurController extends AbstractController
             'password' => $utilisateur->getPassword(),
             'firstname' => $utilisateur->getFirstname(),
             'lastname' => $utilisateur->getLastname(),
-            'email' => $utilisateur->getEmail(),                       
+            'email' => $utilisateur->getEmail(), 
+            'role' => $utilisateur->getRole(),                    
             ];
 
         return new JsonResponse($data, Response::HTTP_OK);
@@ -76,7 +78,8 @@ class UtilisateurController extends AbstractController
                 'password' => $utilisateur->getPassword(),
                 'firstname' => $utilisateur->getFirstname(),
                 'lastname' => $utilisateur->getLastname(),
-                'email' => $utilisateur->getEmail(),                       
+                'email' => $utilisateur->getEmail(), 
+                'role' => $utilisateur->getRole(),                           
                 ];
             
         }
@@ -117,5 +120,3 @@ class UtilisateurController extends AbstractController
     }
 
 }
-
-
